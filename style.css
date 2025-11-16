@@ -20,6 +20,10 @@ body {
     padding: 0 20px;
     position: relative;
     z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Logo sekcija */
@@ -29,39 +33,53 @@ body {
 }
 
 .logo h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #00df9a 0%, #0088cc 50%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
 .platform-tag {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 1rem;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
     color: #a8b2d1;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
 }
 
-/* Hero sekcija */
+/* Glavni sadržaj */
 .hero {
     text-align: center;
-    padding: 80px 0 60px;
+    width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80vh;
 }
 
-.hero-subtitle {
-    font-size: 1.8rem;
-    color: #ffffff;
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 50px;
-    line-height: 1.4;
-    font-weight: 500;
+}
+
+/* Hero tekst */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 
 .highlight {
@@ -69,16 +87,25 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 700;
+    font-weight: 800;
 }
 
-/* Grupa buttona */
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #a8b2d1;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Grupa buttona - SADA NA DNU */
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 50px;
+    margin-top: auto;
+    padding-bottom: 50px;
 }
 
 /* Opšti stil za button */
@@ -86,15 +113,15 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 18px 40px;
-    border-radius: 12px;
+    padding: 20px 45px;
+    border-radius: 15px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    min-width: 300px;
+    min-width: 320px;
     position: relative;
     overflow: hidden;
 }
@@ -139,10 +166,11 @@ body {
 .prosper-section {
     text-align: center;
     margin-top: 40px;
-    padding: 30px;
+    padding: 25px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .prosper-badge {
@@ -153,50 +181,16 @@ body {
     display: inline-block;
     background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
     color: #000;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1.3rem;
 }
 
 .prosper-motto {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #00df9a;
-    font-weight: 600;
-}
-
-/* Feature cards */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.feature-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 30px 25px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.feature-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    color: #00df9a;
-}
-
-.feature-card p {
-    color: #a8b2d1;
-    font-size: 1rem;
+    font-weight: 700;
 }
 
 /* Pozadinski efekti */
@@ -212,10 +206,10 @@ body {
 
 .gradient-circle-1 {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 10%;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background: radial-gradient(circle, rgba(0, 223, 154, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
@@ -225,8 +219,8 @@ body {
     position: absolute;
     bottom: 10%;
     right: 10%;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     background: radial-gradient(circle, rgba(0, 136, 204, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 8s ease-in-out infinite reverse;
@@ -239,58 +233,63 @@ body {
 
 /* Responsive dizajn */
 @media (max-width: 768px) {
-    .hero {
-        padding: 60px 0 40px;
+    .logo h1 {
+        font-size: 3.5rem;
     }
     
-    .logo h1 {
-        font-size: 3rem;
+    .hero-title {
+        font-size: 2.2rem;
     }
     
     .hero-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     
     .btn {
         min-width: 280px;
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
-    
-    .features {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        padding: 18px 35px;
+        font-size: 1.1rem;
     }
     
     .prosper-plus {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        padding: 10px 20px;
     }
     
     .prosper-motto {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 480px) {
     .logo h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
     }
     
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .button-group {
-        gap: 12px;
+        gap: 15px;
     }
     
     .btn {
         min-width: 260px;
-        padding: 14px 28px;
+        padding: 16px 30px;
+        font-size: 1rem;
     }
     
     .platform-tag {
         font-size: 0.9rem;
-        padding: 6px 16px;
+        padding: 8px 18px;
+    }
+    
+    .prosper-section {
+        padding: 20px;
     }
 }
