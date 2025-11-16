@@ -11,6 +11,7 @@ body {
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 .container {
@@ -21,23 +22,46 @@ body {
     z-index: 2;
 }
 
+/* Logo sekcija */
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00df9a 0%, #0088cc 50%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.platform-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: #a8b2d1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 /* Hero sekcija */
 .hero {
     text-align: center;
-    padding: 120px 0 80px;
+    padding: 80px 0 60px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    background: linear-gradient(135deg, #ffffff 0%, #a8b2d1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+    line-height: 1.4;
+    font-weight: 500;
 }
 
 .highlight {
@@ -45,25 +69,19 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    color: #a8b2d1;
-    margin-bottom: 50px;
-    line-height: 1.6;
+    font-weight: 700;
 }
 
 /* Grupa buttona */
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
-/* Primarni button (zeleni) */
+/* Opšti stil za button */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -71,37 +89,80 @@ body {
     padding: 18px 40px;
     border-radius: 12px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    min-width: 280px;
+    min-width: 300px;
     position: relative;
     overflow: hidden;
 }
 
+/* Primarni button (zeleni) */
 .btn-primary {
     background: linear-gradient(135deg, #00df9a 0%, #00b37d 100%);
     color: #000000;
-    box-shadow: 0 8px 32px rgba(0, 223, 154, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 223, 154, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0, 223, 154, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 223, 154, 0.6);
 }
 
-/* Sekundarni button (plavi - Telegram) */
+/* Sekundarni button (plavi) */
 .btn-secondary {
     background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
     color: #ffffff;
-    box-shadow: 0 8px 32px rgba(0, 136, 204, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 136, 204, 0.4);
 }
 
 .btn-secondary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0, 136, 204, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 136, 204, 0.6);
+}
+
+/* Telegram button (purple) */
+.btn-telegram {
+    background: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.4);
+}
+
+.btn-telegram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(138, 43, 226, 0.6);
+}
+
+/* Prosper+ sekcija */
+.prosper-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prosper-badge {
+    margin-bottom: 15px;
+}
+
+.prosper-plus {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.prosper-motto {
+    font-size: 1.4rem;
+    color: #00df9a;
+    font-weight: 600;
 }
 
 /* Feature cards */
@@ -128,14 +189,14 @@ body {
 }
 
 .feature-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 12px;
     color: #00df9a;
 }
 
 .feature-card p {
     color: #a8b2d1;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* Pozadinski efekti */
@@ -179,38 +240,57 @@ body {
 /* Responsive dizajn */
 @media (max-width: 768px) {
     .hero {
-        padding: 80px 0 60px;
+        padding: 60px 0 40px;
     }
     
-    .hero-title {
-        font-size: 2.5rem;
+    .logo h1 {
+        font-size: 3rem;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
     
     .btn {
-        min-width: 250px;
+        min-width: 280px;
         padding: 16px 32px;
+        font-size: 1rem;
     }
     
     .features {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
     
-    .hero-subtitle {
+    .prosper-plus {
         font-size: 1rem;
     }
     
+    .prosper-motto {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
     .button-group {
-        gap: 15px;
+        gap: 12px;
+    }
+    
+    .btn {
+        min-width: 260px;
+        padding: 14px 28px;
+    }
+    
+    .platform-tag {
+        font-size: 0.9rem;
+        padding: 6px 16px;
     }
 }
